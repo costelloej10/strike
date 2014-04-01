@@ -1,0 +1,7 @@
+<%= form_tag sessions_path, class: "form-signin", role: "form" do %>
+<h2 class="form-signin-heading">Please sign in</h2>
+    <%= text_field_tag :username, params[:username], placeholder: "Username", class: "form-control username" %>
+    <%= password_field_tag :password, "", placeholder: "Password", class: "form-control" %>
+    <%= submit_tag "Log in", class: "btn btn-lg btn-primary btn-block" %>
+    <%= link_to 'First time here? Register', new_user_path %>
+<% end %>

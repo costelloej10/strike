@@ -1,0 +1,37 @@
+<div class="panel panel-primary engine_dashboard">
+  <div class="panel-heading engine_heading">
+    Engine Information
+  </div>
+  <div class="panel-body">
+    <b>Engine Name:</b> <%= @engine.engineName %><br/>
+    <b>Server:</b> <%= @engine.server %>
+  </div>
+</div>
+<a href="<%= new_connection_path%>" class="btn btn-primary btn-lg active" id="new_engine_conn" role="button">Create Engine Connection</a>
+<h3 id="connections_title">Engine Connections</h3>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Connection ID</th>
+      <th>Engine Name</th>
+      <th>Sender Comp</th>
+      <th>Target Comp</th>
+      <th>IP</th>
+      <th>Port</th>
+      <th>View/Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @engine_connections.each do |connection| %>
+        <tr>
+            <td><%= link_to connection.id,connection_path(connection) %></td>
+            <td><%= connection.engineName %></td>
+            <td><%= connection.senderComp %></td>
+            <td><%= connection.targetComp %></td>
+            <td><%= connection.ip %></td>
+            <td><%= connection.port %></td>
+            <td><%= link_to "View/Edit",connection_path(connection) %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<%= form_for @engine, url: {action: "create"}, html: {class: "form-signin", role: "form"} do |f| %>
+  <h2 class="form-signin-heading">New Engine</h2>
+  <% if @engine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@engine.errors.count, "error") %> prohibited this engine from being saved:</h2>
+
+      <ul>
+      <% @engine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :engineName, "Engine Name" %>
+    <%= f.text_field :engineName, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :server %>
+    <%= f.text_field :server, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create Engine", class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<a href="<%= new_engine_path%>" class="btn btn-primary btn-lg active" role="button">Create Engine</a>
+<a href="<%= new_connection_path%>" class="btn btn-primary btn-lg active" role="button">Create Engine Connection</a>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Engine Name</th>
+      <th>Server</th>
+      <th>Connections</th>
+      <th>View/Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @engines.each do |engine| %>
+      <tr>
+        <td><%= link_to engine.engineName, engine_path(engine) %></td>
+        <td><%= engine.server %></td>
+        <td><%= engine.connections.count %></td>
+        <td><%= link_to "View/Edit",engine_path(engine) %></td>
+        <td><%= link_to "Delete", engine_path(engine), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

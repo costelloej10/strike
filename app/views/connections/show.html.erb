@@ -1,0 +1,14 @@
+<a href="<%= edit_connection_path(@connection) %>" class="btn btn-primary btn-lg active" role="button">Edit Connection</a>
+<br/><br/>
+<div class="panel panel-primary engine_dashboard">
+  <div class="panel-heading engine_heading">
+    Connection Information
+  </div>
+  <div class="panel-body">
+    <b>Engine Name:</b> <%= @connection.engineName %><br/>
+    <b>SenderComp:</b> <%= @connection.senderComp %><br/>
+    <b>TargetComp:</b> <%= @connection.targetComp %><br/>
+    <b>IP:</b> <%= @connection.ip %><br/>
+    <b>Port:</b> <%= @connection.port %><br/>
+  </div>
+</div>
