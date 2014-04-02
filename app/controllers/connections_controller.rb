@@ -48,6 +48,7 @@ class ConnectionsController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @connection.errors, status: :unprocessable_entity }
+        @engines = current_user.engines
       end
     end
   end
