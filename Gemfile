@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-gem ‘pg’
+# Use sqlite3 as the database for Active Record
 
 gem 'debugger'
 
@@ -14,6 +14,11 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'better_errors'
   gem "binding_of_caller"
+  gem 'mysql2'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'bcrypt-ruby', '~> 3.1.2'
